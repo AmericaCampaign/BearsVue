@@ -13,7 +13,19 @@
   </head>
   <body>
 
+    <div id="bear">
+      <h1>{{ greeting }}</h1>
+      <div v-for="b in bears">
+        <h1>{{b.name}} </h1>
+        <p> {{b.color}} </p>
+        <img :src="b.img">
+      </div>
+    </div>
 
+
+
+    <!-- vue cden -->
+    <script src="https://unpkg.com/vue"></script>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
