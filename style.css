@@ -20,3 +20,12 @@ body {
   width: 50%;
   margin-bottom: 10px;
 }
+
+.bear-btn-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.bear-btn-flex > button {
+  margin: 10px;
+}

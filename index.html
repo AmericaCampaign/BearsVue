@@ -41,6 +41,10 @@
           <h1>{{b.name}} </h1>
           <p> {{b.color}} </p>
           <img class="bear-img" :src="b.img">
+          <div class="bear-btn-flex">
+            <button v-on:click="deleteBear(b)" class="btn btn-danger" type="button">Delete </button>
+            <button v-on:click="sayHi(b)"  class="btn btn-primary" type="button">Get Info </button>
+          </div>
         </div>
       </div>
     </div>

@@ -4,6 +4,11 @@ function Bear(name, color, img){
   this.img = img;
 }
 
+Bear.prototype.getInfo = function() {
+  return "My name is " + this.name + " and I am " + this.color;
+}
+
+
 var bear = new Bear('Monty', "Brown", "http://images.nationalgeographic.com/wpf/media-live/photos/000/005/cache/grizzly-bear_566_600x450.jpg")
 var bear2 = new Bear('Yogi', "Black", "https://nicodemasplusthree.files.wordpress.com/2015/05/grizzly-bear-1.jpg?w=565&h=376")
 var bear3 = new Bear('BooBoo', "Black And White", "http://www.montanaoutdoor.com/wp-content/uploads/2016/09/Screen-Shot-2016-09-28-at-7.24.38-PM.png")
@@ -16,6 +21,8 @@ var bear9 = new Bear('Charles', "Magent", "https://s-media-cache-ak0.pinimg.com/
 
 var allBears = [bear, bear2, bear3, bear4, bear5, bear6,
                 bear7, bear8, bear9];
+
+console.log(allBears[0].getInfo())
 
 var newBearVue = new Vue({
   el: '#bear',
@@ -33,12 +40,20 @@ var newBearVue = new Vue({
       let name = this.newName;
       let color = this.newColor;
       let img = this.newImg;
-      console.log(name, color, img);
       let bear = new Bear(name, color, img);
       this.bears.push(bear);
       this.newName = ''
       this.newColor = ''
       this.newImg = ''
+    },
+    deleteBear: function(bear){
+      let updatedBears = this.bears.filter(function(bearInArray){
+        return bearInArray.name !== bear.name
+      })
+      this.bears = updatedBears;
+    },
+    sayHi: function(bear) {
+      alert(bear.getInfo())
     }
   }
 })
