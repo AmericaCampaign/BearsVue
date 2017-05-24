@@ -9,16 +9,20 @@
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-
+    <link rel="stylesheet" href="style.css">
   </head>
-  <body>
+  <body class="container">
 
     <div id="bear">
-      <h1>{{ greeting }}</h1>
-      <div v-for="b in bears">
-        <h1>{{b.name}} </h1>
-        <p> {{b.color}} </p>
-        <img :src="b.img">
+      <div class="jumbotron">
+        <h1>{{ greeting }}</h1>
+      </div>
+      <div class="bear-flex-container">
+        <div class="bear-panel" v-for="b in bears">
+          <h1>{{b.name}} </h1>
+          <p> {{b.color}} </p>
+          <img class="bear-img" :src="b.img">
+        </div>
       </div>
     </div>
 
