@@ -22,6 +22,23 @@ var newBearVue = new Vue({
   data: {
     greeting: "Hello, from Bear Vue",
     oneBear: allBears[0],
-    bears: allBears
+    bears: allBears,
+    newName: '',
+    newColor: '',
+    newImg: ''
+  },
+  methods: {
+    addNewBear: function(event){
+      event.preventDefault();
+      let name = this.newName;
+      let color = this.newColor;
+      let img = this.newImg;
+      console.log(name, color, img);
+      let bear = new Bear(name, color, img);
+      this.bears.push(bear);
+      this.newName = ''
+      this.newColor = ''
+      this.newImg = ''
+    }
   }
 })
